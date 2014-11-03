@@ -22,6 +22,9 @@ class Fronut(models.Model):
     initial_amount = models.IntegerField(default=12)
     remaining_amount = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
-
+    
     def __str__(self):
         return "{0} - {1}".format(self.user.name, self.shop.name)
+    
+    def consumed(self):
+        return self.initial_amount - self.remaining_amount

@@ -1,0 +1,38 @@
+<h1>WELCOME TO FRONUTS!!!</h1>
+<h3>The best friday donut club currently in existence!</h3>
+
+{% if fronuts_list %}
+<div id="fronuts_list">
+    <table>
+        <thead>
+            <tr>
+                <td>Date</td>
+                <td>Fronutter</td>
+                <td>Fronut Source</td>
+                <td>Fronuts Supplied</td>
+                <td>Fronuts Reckt</td>
+                <td>likes</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fronut in fronuts_list %}
+            <tr>
+                <td>{{ fronut.date }}</td>
+                <td>{{ fronut.user.name }}</td>
+                <td>{{ fronut.shop.name }}</td>
+                <td>{{ fronut.initial_amount }}</td>
+                <td>{{ fronut.consumed }}</td>
+                <td>{{ fronut.likes }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+    <p>No Fronuts yet?  There's one easy way to fix that!</p>
+    
+{% endif %}
+
+<h3>Register a fronut!</h3>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p> {% endif %}
+<h3>TODO: Register Fronut Form</h3>
