@@ -1,5 +1,5 @@
 from django.db import models
-import datetime
+from datetime import datetime
 from django.utils import timezone
 
 # Create your models here.
@@ -22,9 +22,14 @@ class Fronut(models.Model):
     initial_amount = models.IntegerField(default=12)
     remaining_amount = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
+    notes = models.TextField(max_length=255, default="Mmmmmmmmm donuts")
     
     def __str__(self):
         return "{0} - {1}".format(self.user.name, self.shop.name)
     
     def consumed(self):
         return self.initial_amount - self.remaining_amount
+    
+    def register_and_save(self):
+        self.date = datetime.now()
+        self.save()
