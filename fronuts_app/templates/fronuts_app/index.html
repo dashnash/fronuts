@@ -18,17 +18,19 @@
                 <td>Fronuts Supplied</td>
                 <td>Fronuts Reckt</td>
                 <td>likes</td>
+                <td>Notes</td>
             </tr>
         </thead>
         <tbody>
         {% for fronut in fronuts_list %}
             <tr>
-                <td>{{ fronut.date }}</td>
+                <td>{{ fronut.date.date }}</td>
                 <td>{{ fronut.user.name }}</td>
                 <td>{{ fronut.shop.name }}</td>
                 <td>{{ fronut.initial_amount }}</td>
                 <td>{{ fronut.consumed }}</td>
                 <td>{{ fronut.likes }} </td>
+                <td>{{ fronut.notes }} </td>
             </tr>
         {% endfor %}
         </tbody>
@@ -36,11 +38,15 @@
 </div>
 {% else %}
     <p>No Fronuts yet?  There's one easy way to fix that!</p>
-    
 {% endif %}
 
 <h3>Register a fronut!</h3>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p> {% endif %}
-<h3>TODO: Register Fronut Form</h3>
+
+<form action="{% url 'fronuts:register_fronut' %}" method="post">
+{% csrf_token %}
+{{ register_fronut_form }}
+<input type="submit" value="Submit">
+</form>
 
 {% endblock content %}
