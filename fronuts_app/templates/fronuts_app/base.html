@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}FRONUTS!{% endblock title %}</title>
+    {% block head %}{% endblock head %}
+</head>
+<body>
+    <div id="branding">{% block branding %}<h1>FRONUTS!</h1>{% endblock branding %}</div>
+    <div id="sidebar">{% block sidebar %}{% endblock sidebar %}</div>
+    <div id="content">{% block content %}{% endblock content %}</div>
+</body>

@@ -1,6 +1,12 @@
+{% extends "fronuts_app/base.html" %}
+{% block title %}Fronuts!!! | FRiday dONUTS {% endblock title %}
+
+{% block branding %}
 <h1>WELCOME TO FRONUTS!!!</h1>
 <h3>The best friday donut club currently in existence!</h3>
+{% endblock branding %}
 
+{% block content %}
 {% if fronuts_list %}
 <div id="fronuts_list">
     <table>
@@ -36,3 +42,5 @@
 <h3>Register a fronut!</h3>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p> {% endif %}
 <h3>TODO: Register Fronut Form</h3>
+
+{% endblock content %}
