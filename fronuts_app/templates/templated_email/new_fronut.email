@@ -1,0 +1,23 @@
+{% block subject %}!!DONUTS!!  {{fronutter}} via {{shop}} !!DONUTS!!{% endblock %}
+    {% block plain %}
+      Hello Fronutters!,
+
+      It's Friday!  That means that it's time for some fronuts!
+      
+      {{fronutter}} was nice enough to bring us {{amount}} delicious pastries from {{shop}}.
+      
+      {{message}}
+
+      Thanks {{fronutter}, you rock!
+    {% endblock %}
+    {% block html %}
+      <p>Hello Fronutters!</p>
+
+      <p>It's Friday!  That means that it's time for some fronuts!</p>
+      
+      <p>{{fronutter}} was nice enough to bring us {{amount}} delicious pastries from {{shop}}.</p>
+      
+      <p>{{message}}</p>
+
+      <p>Thanks {{fronutter}, you rock!</p>
+    {% endblock %}
