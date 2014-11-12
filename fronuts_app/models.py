@@ -9,6 +9,9 @@ class User(models.Model):
     def __str__(self):
         return self.name
     
+    def email(self):
+        return "{0}@amazon.com".format(self.name)
+    
 class Shop(models.Model):
     name = models.CharField(max_length=40)
 
@@ -22,7 +25,7 @@ class Fronut(models.Model):
     initial_amount = models.IntegerField(default=12)
     remaining_amount = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
-    notes = models.TextField(max_length=255, default="Mmmmmmmmm donuts")
+    notes = models.TextField(max_length=255, default="Donuts located in:   \n\nMmmmmmmmm donuts")
     
     def __str__(self):
         return "{0} - {1}".format(self.user.name, self.shop.name)
